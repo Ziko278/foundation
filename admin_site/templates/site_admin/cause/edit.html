@@ -1,0 +1,42 @@
+{% extends 'site_admin/layout.html' %}
+{% block 'page' %} Tag {% endblock %}
+{% block 'subpage' %} Edit {% endblock %}
+{% load static %}
+{% load humanize %}
+{% block 'main' %}
+
+<form method="POST" action="">
+    {% csrf_token %}
+    <div class="moda" id="verticalycentered" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Tag</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating">
+                        {{ form.name }}
+                        <label for="floatingName">Tag Name <span style="color:red"><b>*</b></span></label>
+                    </div><br />
+
+                    <div class="form-floating">
+                        {{ form.description }}
+                        <label for="floatingName">Tag Description</label>
+                    </div><br />
+
+                    <div class="form-floating">
+                        {{ form.similar_tag }}
+                        <label for="floatingName">Similar Tag</label>
+                    </div><br />
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Update </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{%endblock %}
+

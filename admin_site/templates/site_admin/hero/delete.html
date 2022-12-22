@@ -1,0 +1,29 @@
+{% extends 'site_admin/layout.html' %}
+{% block 'page' %} Tag {% endblock %}
+{% block 'subpage' %} Detail {% endblock %}
+{% load static %}
+{% load humanize %}
+{% block 'main' %}
+<div class="page-header">
+    <h3 class="page-title"> Tag Name: <i>{{tag.name|upper}} </i> </h3>
+</div>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Are you sure you want to delete <i>"{{tag.name}}"</i> as a transaction tag?</h4>
+
+            <form style="display:inline" method="post">
+                {% csrf_token %}
+                <button class="btn btn-success">Proceed</button>
+            </form>
+            <a class="btn btn-danger" href="{% url 'tag_detail' tag.id %}"> Cancel</a>
+        </div>
+    </div>
+</div>
+
+
+{%endblock %}
+
+
+

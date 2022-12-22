@@ -1,0 +1,129 @@
+{% extends 'site_admin/layout.html' %}
+{% block 'page' %} Tag {% endblock %}
+{% block 'subpage' %} Detail {% endblock %}
+{% load static %}
+{% load humanize %}
+{% block 'main' %}
+
+<div class="card">
+    <div class="card-body ">
+        <h5 class="card-title">Actions</h5>
+        <a type="button" href="{% url 'tag_edit' tag.id %}" class="btn btn-outline-primary">Edit Tag</a>
+        <a type="button" href="{% url 'tag_delete' tag.id %}" class="btn btn-outline-danger">Delete Tag</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body pt-3">
+                <ul class="nav nav-tabs nav-tabs-bordered">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Tag Detail</button>
+                    </li>
+
+                </ul>
+
+                <div class="tab-content pt-2">
+                    <div class="tab-pane fade show active profile-overview" id="profile-overview">
+
+                        <div class="row">
+                            <div class="col-xxl-4 col-md-4">
+                                <div class="card info-card sales-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tag Name <span></span></h5>
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-journal-check"></i>
+                                            </div>
+
+                                            <div class="ps-3">
+                                                <h6>{{ tag.name|title }}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-8 col-md-8">
+                                <div class="card info-card sales-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tag Description <span></span></h5>
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-journal-code"></i>
+                                            </div>
+
+                                            <div class="ps-3">
+                                                <p>{{ tag.description|title }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-6 col-md-6">
+                                <div class="card info-card sales-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Users <span> </span></h5>
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-people"></i>
+                                            </div>
+
+                                            <div class="ps-3">
+                                                <h6>{{ tag.no_of_users }}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-6 col-md-6">
+                                <div class="card info-card sales-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Transactions <span> </span></h5>
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-currency-exchange"></i>
+                                            </div>
+
+                                            <div class="ps-3">
+                                                <h6>{{ tag.transactions|floatformat|intcomma }}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-12 col-md-12">
+                                <div class="card info-card sales-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Similar Tags <span> </span></h5>
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-alt"></i>
+                                            </div>
+
+                                            <div class="ps-3">
+                                                <p>{% for tag in tag.similar_tag.all %} <b>#{{ tag.name|title }}</b> {% endfor %}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+              </div><!-- End Bordered Tabs -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+{%endblock %}
+

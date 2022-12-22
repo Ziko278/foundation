@@ -1,0 +1,124 @@
+{% extends 'site_admin/layout.html' %}
+{% block 'page' %} Dashboard {% endblock %}
+{% block 'subpage' %} Dashboard {% endblock %}
+{% load static %}
+{% load humanize %}
+{% block 'main' %}
+<section class="section">
+  <div class="row">
+
+	<div class="col-lg-12">
+
+	  <div class="card">
+		<div class="card-body">
+		  <h5 class="card-title">ORGANIZATION INFORMATION	<a style="float:right" href="{% url 'site_info_update' site_info.pk %}" class="btn btn-outline-primary">Edit Info</a></h5>
+
+		  <!-- Advanced Form Elements -->
+		 
+			
+			<div class="row mb-3">
+			
+			  <div class="col-sm-6">
+				<div class="">
+				  <label for="floatingInput">Organisation Name</label>
+				  <p>{{site_info.name|upper}}</p>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="">
+				<label for="floatingInput">Logo</label>
+				  <p>{{site_info.mobile_1}}</p>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="">
+				<label for="floatingInput">Mobile Line 1</label>
+				  <p>{{site_info.mobile_1}}</p>
+				  
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="">
+				<label for="floatingInput">Mobile Line 2</label>
+				  <p>{{site_info.mobile_2}}</p>
+				  
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="">
+				  <label for="floatingInput">Info Email</label>
+				  <p>{{site_info.info_email}}</p>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="">
+				  <label for="floatingInput">Support Email</label>
+				  <p>{{site_info.support_email}}</p>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="">
+				  <label for="floatingInput">Whatsapp Line</label>
+				  <p>{{site_info.whatsapp}}</p>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="">
+				  <label for="floatingInput">Facebook Link</label>
+				  <p>{{site_info.facebook_link}}</p>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="">
+				  <label for="floatingInput">Instagram Link</label>
+				  <p>{{site_info.instagram_link}}</p>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="">
+				 
+				  <label for="floatingInput">Twitter Link</label>
+				  <p>{{site_info.twitter_link}}</p>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="">
+				  <label for="floatingInput">Youtube Link</label>
+				  <p>{{site_info.youtube_link}}</p>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="">
+				  <label for="floatingInput">Linkedin Link</label>
+				  <p>{{site_info.linkedin_link}}</p>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-12">
+				<div class="">
+				  <label for="floatingInput">Organization Address</label>
+				  <p>{{site_info.address|title}}</p>
+				</div>
+			  </div>
+			  
+			  
+			</div>
+
+		</div>
+	  </div>
+
+	</div>
+  </div>
+</section>
+{%endblock %}

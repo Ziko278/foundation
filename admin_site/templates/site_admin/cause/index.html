@@ -1,0 +1,62 @@
+{% extends 'site_admin/layout.html' %}
+{% block 'page' %} Cause {% endblock %}
+{% block 'subpage' %} Index {% endblock %}
+{% load static %}
+{% load humanize %}
+{% block 'main' %}
+<form>
+    <div class="col-12">
+        <div class="card recent-sales overflow-auto">
+            <div class="filter">
+                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                        <h6>Action</h6>
+                    </li>
+
+                    <li class="dropdown-item"><a class="btn btn-primary" style="width:100%" href="{% url 'cause_create' %}">Add Cause</a></li>
+                </ul>
+            </div>
+
+            <div class="card-body">
+                    <h5 class="card-title">List of our Causes</h5>
+                <table class="table table-borderless datatable">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col" style="min-width:120px">Title</th>
+                        <th scope="col">Category</th>
+                        <th scope="col" class="text-center">Goal</th>
+						<th scope="col" class="text-center">Raised</th>
+                        <th scope="col" class="text-center">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if cause_list %}
+                    {% for cause in cause_list %}
+
+                        <tr>
+                            <th scope="row">{{ forloop.counter }}</th>
+                            <td>{{ cause.title|title }} </td>
+                            <td class="text-center">{{ cause.category|title }}</td>
+							<td class="text-center">{{ cause.goal|floatformat|intcomma }}</td>
+                            <td class="text-center">{{ cause.raised|floatformat|intcomma }}</td>
+                            <td class="text-center"><a class="btn btn-primary" href="{% url 'cause_edit' cause.id %}">Edit</a></td>
+                        </tr>
+
+                    {% endfor %}
+                    {% else %}
+                        <tr><td colspan="6"><h3 class="text-center">No Cause Registered Yet</h3></td></tr>
+                    {% endif %}
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+
+{%endblock %}
+

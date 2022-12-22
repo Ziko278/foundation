@@ -1,0 +1,84 @@
+{% extends 'site_admin/layout.html' %}
+{% block 'page' %} Dashboard {% endblock %}
+{% block 'subpage' %} Dashboard {% endblock %}
+{% load static %}
+{% load humanize %}
+{% block 'main' %}
+<section class="section">
+  <div class="row">
+
+	<div class="col-lg-12">
+
+	  <div class="card">
+		<div class="card-body">
+		  <h5 class="card-title">ORGANIZATION ABOUT INFORMATION</h5>
+
+		  <!-- Advanced Form Elements -->
+		  <form action="" method="POST" enctype="multipart/form-data">
+		  {% csrf_token %}
+			
+			<div class="row mb-3">
+			
+			  <div class="col-sm-6">
+				<div class="form-floating mb-3">
+					{{form.title}}
+				  <label for="floatingInput">Header/Title</label>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="form-floating mb-3">
+				  {{form.founder_name}}
+				  <label for="floatingInput">Founder Name</label>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="form-floating mb-3">
+				  {{form.main_image}}
+				  <label for="floatingInput">Main Image</label>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="form-floating mb-3">
+				  {{form.other_image}}
+				  <label for="floatingInput">Other Image</label>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="form-floating mb-3">
+				{{form.intro_description}}
+				  <label for="floatingInput">Introduction</label>
+				</div>
+			  </div>
+			  
+			  <div class="col-sm-6">
+				<div class="form-floating mb-3">
+				  {{form.main_description}}
+				  <label for="floatingInput">Description</label>
+				</div>
+			  </div>
+			  
+			  
+			  <div class="col-sm-12">
+				<input type="submit" value="save" class="btn btn-outline-primary" style="width:120px;float:right;" />
+			  </div>
+			  
+			
+			  
+			  
+			</div>
+
+		
+
+		  </form><!-- End General Form Elements -->
+
+		</div>
+	  </div>
+
+	</div>
+  </div>
+</section>
+{%endblock %}

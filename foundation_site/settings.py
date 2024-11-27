@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-09n4i_0s8&jebn9%duqt!eto88_9z61*u9!2hkqxrus(s-x1-e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://vinannefoundation.org', 'https://www.vinannefoundation.org']
 
 # Application definition
 
@@ -130,3 +130,9 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'info.vinannefdn@gmail.com'
+EMAIL_HOST_PASSWORD = 'qvgrgigrpcgiwsxv'
+EMAIL_PORT = 587

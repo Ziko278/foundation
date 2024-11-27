@@ -4,24 +4,19 @@
 {% block 'main' %}
 
 {% if banner_list %}
-<div class="container-fluid p-0 mb-5" style="max-height:450px;">
-	<div id="header-carousel" class="carousel slide" data-bs-ride="carousel" style="max-height:450px;">
+<div class="container-fluid p-0 mb-5" style="max-height:500px;background:white">
+	<div id="header-carousel" class="carousel slide" data-bs-ride="carousel" style="max-height:500px;">
 		<div class="carousel-inner">
 			{% for banner in banner_list %}
-			<div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}" style="max-height:450px;">
-				<img class="w-100" src="/media/{{banner.image}}" style="width:100%;height:450px;" alt="Image">
+			<div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}" style="max-height:500px;">
+				<img class="w-100" src="/media/{{banner.image}}" style="width:100%;height:500px;" alt="Image">
 				<div class="carousel-caption">
 					<div class="container">
 						<div class="row justify-content-center">
 							<div class="col-lg-7 pt-5">
 								<h1 class="display-4 text-white mb-3 animated slideInDown">{{banner.title|title}}</h1>
 								<p class="fs-5 text-white-50 mb-5 animated slideInDown">{{banner.description}}</p>
-								<a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
-									{{banner.button_text|title}}
-									<div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-										<i class="fa fa-arrow-right"></i>
-									</div>
-								</a>
+								
 							</div>
 						</div>
 					</div>
@@ -45,38 +40,146 @@
 <!-- Carousel End -->
 {% endif %}
 
-{% if about_info %}
-<!-- About Start -->
+<div class="container-xxl py-5" style="padding-top:0px">
+     <div class="container" style="padding-top:0px">
+	<div class="wow fadeInUp" data-wow-delay="0.5s">
+             <div class="h-100">
+                   <h1 class="display-6 mb-5" style="text-align:center">WHO WE ARE</h1>
+		   <p class="mb-5" style="">
+			VINCENT AND ANNE FOUNDATION
+ is a non- governmental, not-for-profit,  core philanthropic and advocacy organisation.<br /><br />
+
+The plight of the less privileged stemmed our decision to come together and organize a body that will constantly and concertedly proffer assistance to those that are in dire living
+ condition.  Our focus is on protecting and providing for the helpless, the needy, the disadvantaged and the displaced in society. We do well to revive the hope of the hopeless by
+ giving to their needs, and organizing programs that ensure self reliance, we also speak on their behalf, advocating help for them. <br /><br /> 
+With the aid of modern technology like the internet, we see the world as a global unit that can be toured in a very short span of time, so we leverage on this to have our presence 
+felt everywhere.<br /><br />
+
+In driving our goal, we partner with
+<ul style="margin-top:-20px"> 
+  <li>Public spirited individuals</li>
+  <li>Bigger not-for-profit organisations</li>
+  <li>Corporate entities </li>
+  <li>Religious organisations.</li>
+<br />
+VINCENT AND ANNE FOUNDATION devotes effort, resources and time for the welfare of humanity. We don't just do charitable acts and volunteer work, we follow up to see that the charity is 
+creating positive impacts. 
+<b>We work with people</b> and we are positively touching lives. Humanity's welfare is our goal
+			</p>
+
+      		</div>
+	</div>
+    </div>
+</div>
+
 <div class="container-xxl py-5">
 	<div class="container">
-		<div class="row g-5">
+		<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+			<h1 class="display-6 mb-5">OUR IDEOLOGY</h1>
+		</div>
+		<div class="row g-4 justify-content-center">
+			<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+				<div class="service-item bg-white text-center h-100 p-4 p-xl-5">
+					<i class="fa fa-bullseye" style="color:orange;font-size:72px"></i>
+					<h4 class="mb-3">Our Mission</h4>
+					<p class="mb-4" style="">We develop, promote and encourage people participation in charitable work. We build support by acting both on the problem and
+					providing succour in a digital way, leveraging on this internet and network age.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+				<div class="service-item bg-white text-center h-100 p-4 p-xl-5">
+					<i class="fa fa-eye" style="color:orange;font-size:72px"></i>
+					<h4 class="mb-3">Our Vision</h4>
+					<p class="mb-4" style="">To see a society where the care and love for humanity is paramount and see help reaching the helpless in time, anywhere they are.</p>
+					
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+				<div class="service-item bg-white text-center h-100 p-4 p-xl-5">
+					<i class="fa fa-hourglass" style="color:orange;font-size:72px"></i>
+					<h4 class="mb-3">Our Focus</h4>
+					<p class="mb-4" style="">We focus on the HELPLESS.</p>
+					<ul style="text-align:justify">
+						<li>We assist the displaced</li>
+						<li>We care for the sick</li>
+						<li>We give the voiceless a voice, they speak through us.</li>
+						<li>We provide the basics of life where there is much need.</li>
+
+					</ul>
+					
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-xxl py-5" style="padding-top:0px">
+        <div class="container" style="padding-top:0px">
+                <div class="row g-5" style="marging-top:-20px">
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
+                                        <img class="position-absolute w-100 h-100 pt-5 pe-5" src="https://vinannefoundation.org/media/images/gallery/vulture.jpeg" alt="" style="width:100px">
+                                        
+                                </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="h-100">
+                                        <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Vincent and Anne Foundation</div>
+                                        <h1 class="display-6 mb-5">WE CAN DO BETTER</h1>
+
+                                        <p class="mb-5" style="text-align:justify">There was a circulated photo of a vulture waiting for a starving child to die so it could feast on her corps.
+The photo was taken by Kevin Carter, a South African photo journalist who later won the Pulitzers prize for this amazing shot (edited and left out here because of its inhumane posture).
+Kevin however lived just a few months to enjoy his supposed achievement because he later got depressed and took his own life.
+He was savouring his feat and was being celebrated on major news channels and networks worldwide for such an exceptional photographic skill.
+His depression started when, during one of the interviews he granted (a phone-in program) someone phoned in and asked him what later happened to the child. 
+Kevin replied, ‘I didn’t wait to find out after this shot as a I had a flight to catch and the person replied. ‘I put it to you that there were two vultures on that day: one had a camera.
+His constant thought of that statement led to depression and his ultimate suicide.
+
+In whatever we do we should let humanity come first before what we can gain out of the situation.
+Kevin Carter could have been alive today and even be more celebrated if he had done that little act of kindness by picking that little child up and taken to the United Nations feeding centre where she was attempting to reach. 
+In all we do, let us always think of others and how we can be of benefit to humanity. How we can lend a helping hand and wipe away tears in whatever blessed position that we are, let us think of how we can use it to benefit the people most.
+</p>
+                                        
+
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+
+
+{% if about_info %}
+<!-- About Start -->
+<div class="container-xxl py-5" style="padding-top:0px">
+	<div class="container" style="padding-top:0px">
+		<div class="row g-5" style="marging-top:-20px">
 			<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
 				<div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
-					<img class="position-absolute w-100 h-100 pt-5 pe-5" src="/media/{{about_info.main_image}}" alt="" style="object-fit: cover;">
-					<img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="/media/{{about_info.other_image}}" alt="" style="width: 200px; height: 200px;">
+					<img class="position-absolute w-100 h-100 pt-5 pe-5" src="/media/{{about_info.main_image}}" alt="" style="width:100px">
+					<img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="/media/{{about_info.other_image}}" alt="" style="width: 150px; height: 100px;">
 				</div>
 			</div>
 			<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
 				<div class="h-100">
-					<div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">About {{site_info.name|title}}</div>
+					<div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Vincent and Anne Foundation</div>
 					<h1 class="display-6 mb-5">{{about_info.title}}</h1>
-					<div class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
-						<p class="text-dark mb-2">{{about_info.intro_description}}</p>
-						<span class="text-primary">{{about_info.founder_name}}, Founder</span>
-					</div>
-					<p class="mb-5">{{about_info.main_description}}</p>
+					
+					<p class="mb-5" style="text-align:justify">{{about_info.main_description}}</p>
 					<a class="btn btn-primary py-2 px-3 me-3" href="">
-						Learn More
-						<div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-							<i class="fa fa-arrow-right"></i>
-						</div>
-					</a>
-					<a class="btn btn-outline-primary py-2 px-3" href="">
-						Contact Us
-						<div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-							<i class="fa fa-arrow-right"></i>
-						</div>
-					</a>
+                                                Read Further
+                                                <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                                                        <i class="fa fa-arrow-right"></i>
+                                                </div>
+                                        </a>
+
+
+					<div class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
+                                                <p class="text-dar mb-2" style="color:blue;font-family:cursive;font-size:25px">{{about_info.intro_description}}</p>
+                                                <span class="text-primary">{{about_info.founder_name}} (<i>Founder</i>)</span>
+                                        </div>
+
+					
 				</div>
 			</div>
 		</div>
@@ -85,13 +188,123 @@
 <!-- About End -->
 {% endif %}
 
+<section style="border: 5px solid red;margin-top:80px">
+<h1 class="display-6 mb-5" style="text-align:center;color:white;background:red">CALL TO ACTION</h1>
+
+<div class="container-xxl py-5" style="padding-top:0px">
+        <div class="container" style="padding-top:0px">
+                <div class="row g-5" style="marging-top:-20px">
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="position-relative overflow-hidden h-100" style="min-height:300px;margin-top:-70px">
+                                        <img class="position-absoe " src="{% static 'home/img/health_8.jpeg' %}" alt="" style="width:100%;height:300px">
+                                        
+
+
+                                </div>
+				 <a class="btn btn-primary py-2 px-3 me-3" style="margin-top:10px" href="https://youtu.be/wAvWVF4_z0k" target="_blank">
+                                                Watch Video
+                                                <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                                                        <i class="fa fa-arrow-right"></i>
+                                                </div>
+                                        </a>
+
+
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s" style="">
+                                <div class="h-100">
+                                        <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3" style="font-size:35px">Emergency Special Appeals</div>
+                                        <h1 class="display-6 mb-5">Corrective Surgery</h1>
+
+                                        <p class="mb-5" style="text-align:justify">Vincent and Anne Foundation, write to you seeking support for Mrs. Alice Pius, who was diagnosed
+					 with cancer. She had undergone series of surgeries and chemotherapies. As a result of lack of funds to follow up with the treatment, she developed
+					 severe complications from the surgery which led to she excreting faeces from her intestine which lies outside her open stomach. Presently, she can't
+					 use her anus to excrete. She's going through a lot of pain. Her condition is critical and needs  urgent corrective surgery because she uses wrappers
+					 and rags to wrap up and pack the intestine. The corrective surgery and follow up care  has been estimated to cost about six hundred thousand naira
+					 (#600,000) an equivalent of about one thousand two hundred USD ($1200). All expenses are required before the surgery.
+					 We appeal to your kindheartedness to please help and support with any amount 
+					as it will greatly aid in paying her hospital bills. She is in severe pain and at much risk and as such requires around- the- clock care.
+					   Please send your support to reach Mrs Alice Pius via....
+					</p>
+					<h3 class="text-hite mb-5">Naira Account</h3>
+                                <p style="margin-top:-50px" class="ext-white-50 mb-0">BANK: FIRST CITY MONUMENT BANK (FCMB)</p>
+                                <p class="text-whie-50 mb-0">ACCOUNT NUMBER: 9196167017</p>
+                                <p class="text-whit mb-0">ACCOUNT NAME: VINCENT AND ANNE FOUNDATION</p>
+                                <br />
+
+                                <h3 class="text-whi mb-5">Dollar Account</h3>
+
+                 			<img src="https://vinannefoundation.org/media/images/gallery/swift_4.jpg" style="width:100%;margin-top:-40px" />
+				<p style="margin-top:20px" class="text-whie-50 mb-0">You could also donate via</p>
+
+                                <h3 class="texthite">Western Union or Money Gram</h3>
+                                <p style="margin-top:0px" class="ext-white-50 mb-0">To:</p>
+                                <p style="margin-top:0px" class="ext-white-50 mb-0">Vincent and Anne Foundation</p>
+                                <p style="margin-top:0px" class="ext-white-50 mb-0">+{{site_info.mobile_1}}</p>
+
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+
+<hr />
+
+<div class="container-xxl py-5" style="padding-top:0px">
+        <div class="container" style="padding-top:0px">
+                <div class="row g-5" style="marging-top:-20px">
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="position-relative overflow-hidden h-100" style="">
+                                        <img class="position-absoute w-100 " src="https://vinannefoundation.org/media/images/gallery/h1.jpeg" alt="" style="width:100px;height:250px">
+					<img class="position-absoute w-100" src="https://vinannefoundation.org/media/images/gallery/h2.jpeg" alt="" style="width:100px;height:250px">
+                                        <img class="position-absoute w-100 " src="https://vinannefoundation.org/media/images/gallery/h3.jpeg" alt="" style="width:100px;height:250px">
+
+					<img class="position-absoute w-100" src="https://vinannefoundation.org/media/images/gallery/h4.jpeg" alt="" style="width:100px;height:250px">
+					<img class="position-absoute w-100 " src="https://vinannefoundation.org/media/images/gallery/h5.jpeg" alt="" style="width:100px;height:250px">
+                                </div>
+				
+
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="h-100">
+                                        <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3" style="font-size:35px">Emergency Special Appeals</div>
+                                        <h1 class="display-6 mb-5">Give them a Therapeutic Feeding and Stabilization Center</h1>
+
+                                        <p class="mb-5" style="text-align:justify">HELP SAVE THE CHILDREN AND FAMILIES IN NIGERIA. SO MANY OF THEM COULD DIE OF MALNUTRITION AND HUNGER CAUSED BY CIVIL CONFLICT, TERRORISM AND NATURAL DISASTER WHICH HAS RESULTED IN DISPLACEMENT, SEVERE FOOD INSECURITY AND SPREAD OF PREVENTABLE DISEASES. BEYOND THESE CHALLENGES, CHOLERA OUTBREAK IS FURTHER THREATENING THE LIVES OF THESE ONES, THE SITUATION IS GETTING WORSE BY THE DAY. WE NEED TO ACT NOW TO SAVE THE LIVES OF THESE CHILDREN, THEIR LIVES ARE AT RISK.
+THIS BEING THE CASE, WE ARE WORKING ON ESTABLISHING A THERAPEUTIC FEEDING AND STABILIZATION CENTRE.  A CENTRE THAT PROVIDES THERAPEUTIC FOOD FOR INFANTS, YOUNG CHILDREN, PREGNANT AND NURSING MOTHERS SUFFERING FROM HUNGER AND MALNUTRITION. WE ARE ALSO WORKING TO SUPPORT AND STRENGTHEN THE HEALTH SYSTEM ESPECIALLY FOR MATERNAL AND CHILD HEALTH.
+HUNGER AND MALNUTRITION REMAINS THE LEADING THREATS TO HUMAN EXISTENCE IN ALL RAMIFICATIONS. MILLIONS OF PEOPLE GO TO BED HUNGRY AND MILLIONS MORE DON’T KNOW WHERE THEIR NEXT MEAL WILL BE COMING FROM.
+THE STORY OF HEALTH IN NIGERIA IS SO STAGGERING. EVERYDAY HUNDREDS OF WOMEN DIE FROM PREVENTABLE CAUSES RELATED TO PREGNANCY AND CHILD BIRTH. INFANTS AND CHILDREN ALSO DIE OF PREVENTABLE DISEASES BECAUSE OF LACK OF ACCESSIBLE MEDICAL FACILITIES. WE WANT TO MAKE FOOD, HEALTH CARE AND EDUCATION ACCESSIBLE. SHELTER, BASIC HYGIENE KITS AND PORTABLE WATER ARE KEY. WE ALSO LOOK AT EXPANDING ECONOMIC OPPORTUNITIES FOR THEM. THEY NEED TO BE SELF RELIANT.
+THESE EMERGENCY RELIEF PROJECT IS ESTIMATED AT THREE HUNDRED AND FIFTY MILLION NAIRA (N350, 000, 000) AN EQUIVALENT OF ABOUT SEVEN HUNDRED AND TWENTY THOUSAND DOLLARS ($720, 000).
+THIS IS A WHOPPING AMOUNT THAT HAS MADE THIS PROJECT HERCULEAN, BUT CONCERTEDLY WE CAN PULL THROUGH. PLEASE DONATE TO THIS HUMANITARIAN CAUSE AND NATURE SHALL ALWAYS SMILE AT YOU
+</p>
+
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+
+</section>
+
  <!-- Causes Start -->
     <div class="container-xxl bg-light my-5 py-5">
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Our Causes</div>
-                <h1 class="display-6 mb-5">Every One Deserves The Opportunity To Live Right</h1>
+                <h1 class="display-6 mb-5" style="font-family:courier">A LEGACY OF GIVING</p>
+		
             </div>
+		<ul style="color:blue;font-family:courier">
+			<li>Feed the Hungry</li>
+			<li>Give drink to the Thirsty</li>
+			<li>Clothe the Naked</li>
+			<li>Care for the Captives</li>
+			<li>Shelter the Homeless</li>
+			<li>Visit the Sick</li>
+			<li>Comfort the Mourning</li>
+
+		</ul>
+		 
+		
             <div class="row g-4 justify-content-center">
 				{% for cause in cause_list %}
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -101,28 +314,13 @@
                                 <small>{{cause.category|upper}}</small>
                             </div>
                             <h5 class="mb-3">{{cause.title}}</h5>
-                            <p>{{cause.description}}</p>
-                            <div class="causes-progress bg-light p-3 pt-2">
-                                <div class="d-flex justify-content-between">
-                                    <p class="text-dark">${{cause.goal|floatformat|intcomma}} <small class="text-body">Goal</small></p>
-                                    <p class="text-dark">${{cause.raised|floatformat|intcomma}} <small class="text-body">Raised</small></p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{cause.progress}}" aria-valuemin="0" aria-valuemax="100">
-                                        <span>{{cause.progress}}%</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <p style="text-align:justify">{{cause.description}}</p>
+                          
                         </div>
                         <div class="position-relative mt-auto">
                             <img class="img-fluid" src="/media/{{cause.image}}" style="height:200px;width:100%" alt="">
                             <div class="causes-overlay">
-                                <a class="btn btn-outline-primary" href="">
-                                    Read More
-                                    <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                        <i class="fa fa-arrow-right"></i>
-                                    </div>
-                                </a>
+                                
                             </div>
                         </div>
                     </div>
@@ -130,10 +328,52 @@
 				{% endfor %}
                 
             </div>
+	 <div class="col-lg-12 wow fadeInUp" style="margin-top:50px" data-wow-delay="0.5s">
+                                <div class="h-100">
+                                        <h3 class="dislay-4 text-primary mb-5">TO THE CHILDREN IN THE STREET</h3>
+
+                                        <p class="mb-5" style="text-align:justify">You wear your wounds like stars and yet are
+ignored by every passing responsible man and woman, I say to cry with hope, for though
+the future may look hopeless and bleak, help will come your way.<br />
+I say congratlations for comng thus far and staying alive. You have won already,
+you are heroes.</p>
+
+
+                                </div>
+                        </div>
+                </div>
+
         </div>
     </div>
     <!-- Causes End -->
 
+
+ <div class="container-xxl bg-light my-5 py-5" style="margin-top:-500px">
+        <div class="container py-5">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="">
+                
+                <h3 class="dsplay-6" style="font-family:sans serif">THESE SICK AND UNDERPRIVILEGED ONES NEED OUR COLLECTIVE ASSISTANCE</p>
+
+            </div>
+                 <p></p>
+                   
+
+            <div class="row g-4 justify-content-center">
+                                {% for item in gallery_list %}
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
+                       
+                        <div class="position-relative mt-auto">
+                            <img class="img-fluid" src="/media/{{item.image}}" style="height:300px;width:100%" alt="">
+                            
+                        </div>
+                    </div>
+                </div>
+                  {% endfor %}
+
+            </div>
+        </div>
+    </div>
 
 
 <!-- Donate Start -->
@@ -142,8 +382,44 @@
 		<div class="row g-5 align-items-center">
 			<div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
 				<div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Donate Now</div>
-				<h1 class="display-6 text-white mb-5">Thanks For The Results Achieved With You</h1>
-				<p class="text-white-50 mb-0">Join and support us as we reach out millions in need. No Amount is too little to donate.</p>
+				<h1 class="display-6 text-white mb-5" style="font-family:courier">Thanks For The Anticipated Results Achieved With Your Kind Donation</h1>
+				<h2 class="" style="color:orange">Cash Donations</h2>
+				<h3 class="text-white mb-5">Naira Account</h3>
+				<p style="margin-top:-50px" class="text-white-50 mb-0">BANK: FIRST CITY MONUMENT BANK (FCMB)</p>
+				<p class="text-white-50 mb-0">ACCOUNT NUMBER: 9196167017</p>
+				<p class="text-white-50 mb-0">ACCOUNT NAME: VINCENT AND ANNE FOUNDATION</p>
+				<br />
+
+                                <h3 class="text-white mb-5">Dollar Account</h3>
+                                <p style="margin-top:-50px;" class="text-white-50 mb-0"><img style="width:100%" src="https://vinannefoundation.org/media/images/gallery/swift_4.jpg" /></p>
+                                
+				<br />
+				
+				<p style="margin-top:20px" class="text-white-50 mb-0">You could also donate via</p>
+
+				<h3 class="text-white">Western Union or Money Gram</h3>
+				<p style="margin-top:0px" class="text-white-50 mb-0">To:</p>
+				<p style="margin-top:0px" class="text-white-50 mb-0">Vincent and Anne Foundation</p>
+                                <p style="margin-top:0px" class="text-white-50 mb-0">+{{site_info.mobile_1}}</p>
+                                
+                                <br />
+
+
+
+		
+				<h2 class="" style="color:orange">In-kind Donations </h2>
+				<p class="text-white-50 mb-0">Packaged/Canned Food, Clothings, Beddings, Blankets, Study Materials, Sanitary Materials etc.</p>
+				<p class="text-white-50 mb-0">Your Expertise Advice, Time and Services are also Solicited.</p>
+				<br />
+
+                                <p style="color:yellow" class=" mb-0"><i>Reach us via:</i></p>				
+				<p class="text-white-50 mb-0">Vincent and Anne Foundation</p>			
+				<p class="text-white-50 mb-0">P.O. Box 11597</p>
+				<p class="text-white-50 mb-0">Garki, Abuja</p>
+				<p class="text-white-50 mb-0">FCT, Nigeria</p>
+				<br />
+
+				<p class="text-white-50 mb-0" style="font-family:cursive;font-size:25px">Join and support us as we reach out to millions in need. Nothing is too little to donate.</p>
 			</div>
 			<div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
 				<div class="h-100 bg-white p-5">
@@ -152,7 +428,7 @@
 							<div class="col-12">
 								<div class="form-floating">
 									<input type="text" class="form-control bg-light border-0" id="name" placeholder="Your Name">
-									<label for="name">Your Name</label>
+									<label for="name">Your Full Name</label>
 								</div>
 							</div>
 							<div class="col-12">
@@ -161,6 +437,20 @@
 									<label for="email">Your Email</label>
 								</div>
 							</div>
+							<div class="col-12">
+                                                                <div class="form-floating">
+                                                                        <input type="text" class="form-control bg-light border-0" name="mobile" id="email" placeholder="Your Mobile Number">
+                                                                        <label for="mobile">Your Mobile Number</label>
+                                                                </div>
+                                                        </div>
+							<div class="col-12">
+                                                                <div class="form-floating">
+                                                                        <input type="text" class="form-control bg-light border-0" name="address" id="email" placeholder="Your Address and Country">
+                                                                        <label for="address">Your Address and Country</label>
+                                                                </div>
+                                                        </div>
+
+
 							<div class="col-12">
 								<div class="btn-group d-flex justify-content-around">
 									<input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked>

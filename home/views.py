@@ -19,7 +19,8 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['banner_list'] = SiteHeroModel.objects.filter(status='active')
-        context['cause_list'] = CauseModel.objects.filter(status='active')
+        context['cause_list'] = CauseModel.objects.filter(status='active').order_by('order')
+        context['gallery_list'] = GalleryModel.objects.all()[:6]
         
         return context
         
@@ -52,6 +53,11 @@ class DonatePageView(TemplateView):
 
 
 
+class ConstructionPageView(TemplateView):
+    template_name = 'home/construction.html'
 
 
+
+class EventPageView(TemplateView):
+    template_name = 'home/event.html'
 

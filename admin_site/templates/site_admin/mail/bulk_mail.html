@@ -1,0 +1,44 @@
+{% extends 'site_admin/layout.html' %}
+{% load static %}
+{% load humanize %}
+{% block 'main' %}
+
+<form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="moda" id="verticalycentered" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Send Message</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating">
+                       	<input type="text" name="subject" class="form-control" required />
+                        <label for="floatingName">Mail Subject <span style="color:red"><b>*</b></span></label>
+                    </div><br />
+
+		
+                    <div class="form-floating">
+                        <textarea name="emails" required class="form-control"></textarea>
+                        <label for="floatingName">Email Address</label>
+			<p>seperate addresses with comma and no space</p>
+                    </div><br />
+
+			
+		<div class="form-floating">
+                        <textarea name="body" required style="min-height:300px" class="form-control"></textarea>
+                        <label for="floatingName">Mail Body</label>
+                    </div><br />
+
+                    
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Send Mail </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{%endblock %}

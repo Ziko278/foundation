@@ -7,126 +7,79 @@
 <section class="section">
   <div class="row">
 
-	<div class="col-lg-12">
+        <div class="col-lg-12">
 
-	  <div class="card">
-		<div class="card-body">
-		  <h5 class="card-title">ORGANIZATION INFORMATION</h5>
+          <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">ORGANIZATION ABOUT INFORMATION</h5>
 
-		  <!-- Advanced Form Elements -->
-		  <form action="" method="POST" enctype="multipart/form-data">
-		  {% csrf_token %}
-			
-			<div class="row mb-3">
-			
-			  <div class="col-sm-6">
-				<div class="form-floating mb-3">
-				  <input type="text" name="name" required="required" value="{{site_info.name}}" autocomplete="off" class="form-control" id="floatingInput" placeholder="name">
-				  <label for="floatingInput">Organisation Name</label>
-				</div>
-			  </div>
-			  
-			  <div class="col-sm-6">
-				<div class="form-floating mb-3">
-				  <input type="file" name="title" class="form-control" id="floatingInput" placeholder="name">
-				  <label for="floatingInput">Website Logo</label>
-				</div>
-			  </div>
-			  
-			  <div class="col-sm-6">
-				<div class="form-floating mb-3">
-				  <input type="text" name="mobile_1" {% if site_info.mobile_1 %} value="{{site_info.mobile_1}}" {% endif %} class="form-control" id="floatingInput" placeholder="name">
-				  <label for="floatingInput">Mobile Line 1</label>
-				</div>
-			  </div>
-			  
-			  <div class="col-sm-6">
-				<div class="form-floating mb-3">
-				  <input type="text" name="mobile_2" {% if site_info.mobile_2 %} value="{{site_info.mobile_2}}" {% endif %} class="form-control" autocomplete="off" id="floatingInput" placeholder="name">
-				  <label for="floatingInput">Mobile Line 2</label>
-				</div>
-			  </div>
-			  
-			  <div class="col-sm-6">
-				<div class="form-floating mb-3">
-				  <input type="email" name="info_email" {% if site_info.info_email %} value="{{site_info.info_email}}" {% endif %} autocomplete="off" class="form-control" id="floatingInput" placeholder="name">
-				  <label for="floatingInput">Info Email</label>
-				</div>
-			  </div>
-			  
-			  <div class="col-sm-6">
-				<div class="form-floating mb-3">
-				  <input type="text" name="support_email" {% if site_info.support_email %} value="{{site_info.support_email}}" {% endif %} class="form-control" id="floatingInput" placeholder="name">
-				  <label for="floatingInput">Support Email</label>
-				</div>
-			  </div>
-			  
-			  <div class="col-sm-6">
-				<div class="form-floating mb-3">
-				  <input type="email" name="whatsapp" {% if site_info.whatsapp %} value="{{site_info.whatsapp}}" {% endif %} autocomplete="off" class="form-control" id="floatingInput" placeholder="name">
-				  <label for="floatingInput">Whatsapp Line</label>
-				</div>
-			  </div>
-			  
-			  <div class="col-sm-6">
-				<div class="form-floating mb-3">
-				  <input type="text" name="facebook_link" {% if site_info.facebook_link %} value="{{site_info.facebook_link}}" {% endif %} class="form-control" id="floatingInput" placeholder="name">
-				  <label for="floatingInput">Facebook Link</label>
-				</div>
-			  </div>
-			  
-			  <div class="col-sm-6">
-				<div class="form-floating mb-3">
-				  <input type="email" name="instagram_link" {% if site_info.instagram_link %} value="{{site_info.instagram_link}}" {% endif %} autocomplete="off" class="form-control" id="floatingInput" placeholder="name">
-				  <label for="floatingInput">Instagram Link</label>
-				</div>
-			  </div>
-			  
-			  <div class="col-sm-6">
-				<div class="form-floating mb-3">
-				  <input type="text" name="twitter_link" {% if site_info.twitter_link %} value="{{site_info.twiiter_link}}" {% endif %} class="form-control" id="floatingInput" placeholder="name">
-				  <label for="floatingInput">Twitter Link</label>
-				</div>
-			  </div>
-			  
-			  <div class="col-sm-6">
-				<div class="form-floating mb-3">
-				  <input type="email" name="youtube_link" {% if site_info.youtube_link %} value="{{site_info.youtube_link}}" {% endif %} autocomplete="off" class="form-control" id="floatingInput" placeholder="name">
-				  <label for="floatingInput">Youtube Link</label>
-				</div>
-			  </div>
-			  
-			  <div class="col-sm-6">
-				<div class="form-floating mb-3">
-				  <input type="text" name="linkedin_link" {% if site_info.linkedin_link %} value="{{site_info.linkedin_link}}" {% endif %} class="form-control" id="floatingInput" placeholder="name">
-				  <label for="floatingInput">Linkedin Link</label>
-				</div>
-			  </div>
-			  
-			  <div class="col-sm-12">
-				<div class="form-floating mb-3">
-				  <input type="text" name="address" {% if site_info.address %} value="{{site_info.address}}" {% endif %} autocomplete="off" class="form-control" id="floatingInput" placeholder="name">
-				  <label for="floatingInput">Organization Address</label>
-				</div>
-			  </div>
-			  
-			  <div class="col-sm-12">
-				<input type="submit" value="save" class="btn btn-outline-primary" style="width:120px;float:right;" />
-			  </div>
-			  
-			
-			  
-			  
-			</div>
+                  <!-- Advanced Form Elements -->
+                  <form action="" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
 
-		
+                        <div class="row mb-3">
 
-		  </form><!-- End General Form Elements -->
+                          <div class="col-sm-6">
+                                <div class="form-floating mb-3">
+                                        {{form.title}}
+                                  <label for="floatingInput">Header/Title</label>
+                                </div>
+                          </div>
 
-		</div>
-	  </div>
+                          <div class="col-sm-6">
+                                <div class="form-floating mb-3">
+                                  {{form.founder_name}}
+                                  <label for="floatingInput">Founder Name</label>
+                                </div>
+                          </div>
 
-	</div>
+                          <div class="col-sm-6">
+                                <div class="form-floating mb-3">
+                                  {{form.main_image}}
+                                  <label for="floatingInput">Main Image</label>
+                                </div>
+                          </div>
+
+                          <div class="col-sm-6">
+                                <div class="form-floating mb-3">
+                                  {{form.other_image}}
+                                  <label for="floatingInput">Other Image</label>
+                                </div>
+                          </div>
+
+                          <div class="col-sm-6">
+                                <div class="form-floating mb-3">
+                                {{form.intro_description}}
+                                  <label for="floatingInput">Introduction</label>
+                                </div>
+                          </div>
+
+                          <div class="col-sm-6">
+                                <div class="form-floating mb-3">
+                                  {{form.main_description}}
+                                  <label for="floatingInput">Description</label>
+                                </div>
+                          </div>
+
+
+                          <div class="col-sm-12">
+                                <input type="submit" value="save" class="btn btn-outline-primary" style="width:120px;float:right;" />
+                          </div>
+
+
+
+
+                        </div>
+
+
+
+                  </form><!-- End General Form Elements -->
+
+                </div>
+          </div>
+
+        </div>
   </div>
 </section>
 {%endblock %}
+

@@ -1,0 +1,286 @@
+{% extends 'home/layout.html' %}
+{% load static %}
+{% load humanize %}
+{% block 'main' %}
+
+{% if banner_list %}
+<div class="container-fluid p-0 mb-5" style="max-height:500px;">
+	<div id="header-carousel" class="carousel slide" data-bs-ride="carousel" style="max-height:500px;">
+		<div class="carousel-inner">
+			{% for banner in banner_list %}
+			<div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}" style="max-height:500px;">
+				<img class="w-100" src="/media/{{banner.image}}" style="width:100%;height:500px;" alt="Image">
+				<div class="carousel-caption">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-7 pt-5">
+								<h1 class="display-4 text-white mb-3 animated slideInDown">{{banner.title|title}}</h1>
+								<p class="fs-5 text-white-50 mb-5 animated slideInDown">{{banner.description}}</p>
+								<a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
+									{{banner.button_text|title}}
+									<div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+										<i class="fa fa-arrow-right"></i>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+			
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+			data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+			data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+</div>
+<!-- Carousel End -->
+{% endif %}
+
+{% if about_info %}
+<!-- About Start -->
+<div class="container-xxl py-5" style="padding-top:0px">
+	<div class="container" style="padding-top:0px">
+		<div class="row g-5" style="marging-top:-20px">
+			<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+				<div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
+					<img class="position-absolute w-100 h-100 pt-5 pe-5" src="/media/{{about_info.main_image}}" alt="" style="width:100px">
+					<img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="/media/{{about_info.other_image}}" alt="" style="width: 200px; height: 200px;">
+				</div>
+			</div>
+			<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+				<div class="h-100">
+					<div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Vinnanne Foundation</div>
+					<h1 class="display-6 mb-5">{{about_info.title}}</h1>
+					<div class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
+						<p class="text-dark mb-2">{{about_info.intro_description}}</p>
+						<span class="text-primary">{{about_info.founder_name}}, Founder</span>
+					</div>
+					<p class="mb-5" style="text-align:justify">{{about_info.main_description}}</p>
+					<a class="btn btn-primary py-2 px-3 me-3" href="">
+						Learn More
+						<div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+							<i class="fa fa-arrow-right"></i>
+						</div>
+					</a>
+					<a class="btn btn-outline-primary py-2 px-3" href="">
+						Contact Us
+						<div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+							<i class="fa fa-arrow-right"></i>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- About End -->
+{% endif %}
+
+ <!-- Causes Start -->
+    <div class="container-xxl bg-light my-5 py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Our Causes</div>
+                <h1 class="display-6 mb-5">A LEGACY OF GIVING</p>
+		
+            </div>
+		 <p>WE ARE WORKING ON ESTABLISHING A THERAPEUTIC FEEDING AND STABILIZATION CENTRE. A CENTRE THAT PROVIDES THERAPEUTIC FOOD FOR INFANTS, YOUNG CHILDREN, PREGNANT AND NURSING
+		MOTHERS SUFFERING FROM HUNGER AND MALNUTRITION. THE CENTRE CONSIST OF THE FOLLOWING PROGRAMS</p>
+		 <div class="causes-progress bg-light p-3 pt-2">
+                       <div class="d-flex justify-content-between">
+                            <p class="text-dark">${{720000|floatformat|intcomma}} <small class="text-body">Goal</small></p>
+                            <p class="text-dark">${{0|floatformat|intcomma}} <small class="text-body">Raised</small></p>
+                        </div>
+                        <div class="progress">
+                             <div class="progress-bar" role="progressbar" aria-valuenow="{{cause.progress}}" aria-valuemin="0" aria-valuemax="100">
+                                  <span>{{0}}%</span>
+                             </div>
+                        </div>
+                  </div>
+
+            <div class="row g-4 justify-content-center">
+				{% for cause in cause_list %}
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
+                        <div class="text-center p-4 pt-0">
+                            <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
+                                <small>{{cause.category|upper}}</small>
+                            </div>
+                            <h5 class="mb-3">{{cause.title}}</h5>
+                            <p style="text-align:justify">{{cause.description}}</p>
+                          
+                        </div>
+                        <div class="position-relative mt-auto">
+                            <img class="img-fluid" src="/media/{{cause.image}}" style="height:200px;width:100%" alt="">
+                            <div class="causes-overlay">
+                                <a class="btn btn-outline-primary" href="">
+                                    Read More
+                                    <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                                        <i class="fa fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				{% endfor %}
+                
+            </div>
+        </div>
+    </div>
+    <!-- Causes End -->
+
+
+	 <div class="container-xxl bg-light my-5 py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Our Causes</div>
+                <h1 class="display-6 mb-5">A LEGACY OF GIVING</p>
+
+            </div>
+                 <p>WE ARE WORKING ON ESTABLISHING A THERAPEUTIC FEEDING AND STABILIZATION CENTRE. A CENTRE THAT PROVIDES THERAPEUTIC FOOD FOR INFANTS, YOUNG CHILDREN, PREGNANT AND NURSING
+                MOTHERS SUFFERING FROM HUNGER AND MALNUTRITION. THE CENTRE CONSIST OF THE FOLLOWING PROGRAMS</p>
+                 <div class="causes-progress bg-light p-3 pt-2">
+                       <div class="d-flex justify-content-between">
+                            <p class="text-dark">${{720000|floatformat|intcomma}} <small class="text-body">Goal</small></p>
+                            <p class="text-dark">${{0|floatformat|intcomma}} <small class="text-body">Raised</small></p>
+                        </div>
+                        <div class="progress">
+                             <div class="progress-bar" role="progressbar" aria-valuenow="{{cause.progress}}" aria-valuemin="0" aria-valuemax="100">
+                                  <span>{{0}}%</span>
+                             </div>
+                        </div>
+                  </div>
+
+            <div class="row g-4 justify-content-center">
+                                {% for cause in cause_list %}
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
+                        <div class="text-center p-4 pt-0">
+                            <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
+                                <small>{{cause.category|upper}}</small>
+                            </div>
+                            <h5 class="mb-3">{{cause.title}}</h5>
+                            <p style="text-align:justify">{{cause.description}}</p>
+
+                        </div>
+                        <div class="position-relative mt-auto">
+                            <img class="img-fluid" src="/media/{{cause.image}}" style="height:200px;width:100%" alt="">
+                            <div class="causes-overlay">
+                                <a class="btn btn-outline-primary" href="">
+                                    Read More
+                                    <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                                        <i class="fa fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+	      {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+	
+<!-- Donate Start -->
+<div class="container-fluid donate my-5 py-5" data-parallax="scroll" data-image-src="img/carousel-2.jpg">
+	<div class="container py-5">
+		<div class="row g-5 align-items-center">
+			<div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+				<div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Donate Now</div>
+				<h1 class="display-6 text-white mb-5">Thanks For The Results Achieved With You</h1>
+				<h3 class="text-white mb-5">Naira Account</h3>
+				<p style="margin-top:-50px" class="text-white-50 mb-0">BANK: FIRST CITY MONUMENT BANK (FCMB)</p>
+				<p class="text-white-50 mb-0">ACCOUNT NUMBER: 9196167017</p>
+				<p class="text-white-50 mb-0">ACCOUNT NAME: VINCENT AND ANNE FOUNDATION</p>
+				<br />
+
+                                <h3 class="text-white mb-5">Dollar Account</h3>
+                                <p style="margin-top:-50px" class="text-white-50 mb-0">BANK: FIRST CITY MONUMENT BANK (FCMB)</p>
+                                <p class="text-white-50 mb-0">ACCOUNT NUMBER: 9196167024</p>
+                                <p class="text-white-50 mb-0">ACCOUNT NAME: VINCENT AND ANNE FOUNDATION</p>
+				<br />
+
+				<p class="text-white-50 mb-0">Join and support us as we reach out to millions in need. No Amount is too little to donate.</p>
+			</div>
+			<div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+				<div class="h-100 bg-white p-5">
+					<form>
+						<div class="row g-3">
+							<div class="col-12">
+								<div class="form-floating">
+									<input type="text" class="form-control bg-light border-0" id="name" placeholder="Your Name">
+									<label for="name">Your Full Name</label>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="form-floating">
+									<input type="email" class="form-control bg-light border-0" id="email" placeholder="Your Email">
+									<label for="email">Your Email</label>
+								</div>
+							</div>
+							<div class="col-12">
+                                                                <div class="form-floating">
+                                                                        <input type="text" class="form-control bg-light border-0" name="mobile" id="email" placeholder="Your Mobile Number">
+                                                                        <label for="mobile">Your Mobile Number</label>
+                                                                </div>
+                                                        </div>
+							<div class="col-12">
+                                                                <div class="form-floating">
+                                                                        <input type="text" class="form-control bg-light border-0" name="address" id="email" placeholder="Your Address and Country">
+                                                                        <label for="address">Your Address and Country</label>
+                                                                </div>
+                                                        </div>
+
+
+							<div class="col-12">
+								<div class="btn-group d-flex justify-content-around">
+									<input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked>
+									<label class="btn btn-light py-3" for="btnradio1">$100</label>
+
+									<input type="radio" class="btn-check" name="btnradio" id="btnradio2">
+									<label class="btn btn-light py-3" for="btnradio2">$500</label>
+
+									<input type="radio" class="btn-check" name="btnradio" id="btnradio3">
+									<label class="btn btn-light py-3" for="btnradio3">$1000</label>
+								</div>
+							</div>
+							
+							<div class="col-12">
+								<div class="form-floating">
+									<input type="number" class="form-control bg-light border-0" id="email" placeholder="Your Email">
+									<label for="amount">Custom Amount</label>
+								</div>
+							</div>
+							
+							<div class="col-12">
+								<button class="btn btn-primary px-5" style="height: 60px;">
+									Donate Now
+									<div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+										<i class="fa fa-arrow-right"></i>
+									</div>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Donate End -->
+
+
+
+{%endblock %}

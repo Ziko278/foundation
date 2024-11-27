@@ -53,6 +53,7 @@ class CauseModel(models.Model):
     status = models.CharField(max_length=20, choices=STATUS)
     goal = models.FloatField()
     raised = models.FloatField(default=0)
+    order = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.title.upper()
@@ -61,3 +62,13 @@ class CauseModel(models.Model):
         if self.raised/self.goal > 1:
             return 100
         return round((self.raised/self.goal)*100)
+
+
+class GalleryModel(models.Model):
+    title = models.CharField(max_length=250)
+    image = models.FileField(upload_to='images/gallery')
+
+
+    def __str__(self):
+        return self.title.upper()
+

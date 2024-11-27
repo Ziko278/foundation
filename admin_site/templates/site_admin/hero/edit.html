@@ -1,37 +1,57 @@
 {% extends 'site_admin/layout.html' %}
 {% block 'page' %} Tag {% endblock %}
-{% block 'subpage' %} Edit {% endblock %}
+{% block 'subpage' %} Create {% endblock %}
 {% load static %}
 {% load humanize %}
 {% block 'main' %}
 
-<form method="POST" action="">
+<form method="POST" action="" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="moda" id="verticalycentered" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Edit Tag</h5>
+                    <h5 class="modal-title">Edit Website Banner</h5>
                 </div>
                 <div class="modal-body">
                     <div class="form-floating">
-                        {{ form.name }}
-                        <label for="floatingName">Tag Name <span style="color:red"><b>*</b></span></label>
+                        {{ form.title }}
+                        <label for="floatingName">Banner Name <span style="color:red"><b>*</b></span></label>
                     </div><br />
 
                     <div class="form-floating">
                         {{ form.description }}
-                        <label for="floatingName">Tag Description</label>
+                        <label for="floatingName">Banner Description</label>
                     </div><br />
 
                     <div class="form-floating">
-                        {{ form.similar_tag }}
-                        <label for="floatingName">Similar Tag</label>
+                        {{ form.image }}
+                        <label for="floatingName">Banner Image</label>
+                    </div><br />
+
+                                        <div class="form-floating">
+                        {{ form.url }}
+                        <label for="floatingName">Banner URL Link</label>
+                    </div><br />
+
+                                        <div class="form-floating">
+                        {{ form.button_text }}
+                        <label for="floatingName">Banner URL Text</label>
+                    </div><br />
+
+                                        <div class="form-floating">
+                        {{ form.order }}
+                        <label for="floatingName">Banner Order</label>
+                    </div><br />
+
+                                        <div class="form-floating">
+                        {{ form.status }}
+                        <label for="floatingName">Banner Status</label>
                     </div><br />
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Update </button>
+                    <button type="submit" class="btn btn-primary">Save </button>
                 </div>
             </div>
         </div>

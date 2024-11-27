@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <title>{{site_info.name|title}} - NGO</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="NGO, Foundation in Nigeria, Feeding Program" name="keywords">
+    <meta content="Foundation Organization in Nigeria" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -58,8 +58,12 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="{% url 'home' %}" class="navbar-brand ms-4 ms-lg-0">
+		{% if site_info.logo %}
+		<img src="/media/{{site_info.logo}}" style="width:100px;height:60px;border-radius:10px" />
+ 		{% else %}
                 <h1 class="fw-bold text-primary m-0">{{site_info.name}}<span class="text-white"></span></h1>
-            </a>
+		{% endif %}            
+</a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -67,11 +71,11 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="{% url 'home' %}" class="nav-item nav-link {% if 0 %} active {% endif %}">Home</a>
                     <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
-                    <a href="causes.html" class="nav-item nav-link">Events</a>
+                    <a href="{% url 'event' %}" class="nav-item nav-link">Events</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
                         <div class="dropdown-menu m-0">
-                            <a href="service.html" class="dropdown-item">Gallery</a>
+                            
 							<a href="{% url 'donate' %}" class="dropdown-item">Donate</a>
                             
                         </div>
@@ -98,44 +102,38 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h1 class="fw-bold text-primary mb-4">Chari<span class="text-white">Team</span></h1>
-                    <p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita</p>
+                    <h1 class="fw-bold text-primary mb-4">Vincent and Anne<span class="text-white"> Foundation</span></h1>
+                    <p>A gift no matter the size could make the difference</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-square me-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square me-1" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                        
+                        <a class="btn btn-square me-1" href="https://wa.me/{{site_info.mobile_1}}"><i class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-square me-1" target="_blank" href="https://www.youtube.com/channel/UC8N_QBy7ZkxOaRtQjWednJQ"><i class="fab fa-youtube"></i></a>
+                        
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Address</h5>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p><i class="fa fa-map-marker-alt me-3"></i> Plot 9  zone B Mararaba.
+ P.O.Box 11597
+Garki. Abuja</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+{{site_info.mobile_1}}</p>
+                    <p><i class="fa fa-envelope me-3"></i>info.vinannefdn@gmail.com</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="{% url 'home' %}">Home</a>
+                    <a class="btn btn-link" href="{% url 'about' %}">About Us</a>
+                    <a class="btn btn-link" href="{% url 'contact' %}">Contact Us</a>
+                    <a class="btn btn-link" href="{% url 'donate' %}">Donate</a>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Newsletter</h5>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div>
+                
             </div>
         </div>
         <div class="container-fluid copyright">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+                        &copy; <a href="#">Vincent and Anne Foundation</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->

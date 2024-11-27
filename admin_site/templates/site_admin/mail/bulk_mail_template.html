@@ -1,0 +1,23 @@
+{% extends 'site_admin/mail/layout.html' %}
+{% load static %}
+{% block 'main' %}
+<!-- ======= Featured Services Section ======= -->
+<section id="featured-services" class="featured-services">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">
+                <div class="icon flex-shrink-0"><i class="fa-solid fa-person"></i></div>
+                <div>
+                    <h4 class="title">{{subject}}</h4>
+                    <p class="description" style="text-align:justify">{{body}} </p>
+                    
+                    
+                </div>
+            </div>
+            <!-- End Service Item -->
+
+        </div>
+    </div>
+</section><!-- End Featured Services Section -->
+
+{%endblock %}

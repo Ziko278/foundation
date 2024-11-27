@@ -4,6 +4,8 @@ from admin_site.views import *
 
 urlpatterns = [
     path('', AdminDashboardView.as_view(), name='admin_dashboard'),
+
+    path('mails/send', send_bulk_mail, name='send_mails'),
     
     path('info/create', SiteInfoCreateView.as_view(), name='site_info_create'),
     path('info/detail/<int:pk>', SiteInfoDetailView.as_view(), name='site_info_detail'),
@@ -27,7 +29,13 @@ urlpatterns = [
     path('cause/<int:pk>/detail', CauseDetailView.as_view(), name='cause_detail'),
     path('cause/<int:pk>/edit', CauseUpdateView.as_view(), name='cause_edit'),
     path('cause/<int:pk>/delete', CauseDeleteView.as_view(), name='cause_delete'),
-    
+   
+
+    path('gallery/add', GalleryCreateView.as_view(), name='gallery_create'),
+    path('gallery/index', GalleryListView.as_view(), name='gallery_index'),
+    path('gallery/<int:pk>/edit', GalleryUpdateView.as_view(), name='gallery_edit'),
+    path('gallery/<int:pk>/delete', GalleryDeleteView.as_view(), name='gallery_delete'),
+
     
 ]
 

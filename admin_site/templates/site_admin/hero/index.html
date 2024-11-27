@@ -37,8 +37,8 @@
                         <tr>
                             <th scope="row">{{ forloop.counter }}</th>
                             <td>{{ banner.title|title }} </td>
-                            <td class="text-center">{{ tag.no_of_users }}</td>
-                            <td class="text-center">{{ tag.transactions|floatformat|intcomma }}</td>
+                            <td class="text-center"><img src="/media/{{banner.image}}" style="width:200px;height:120px" /></td>
+                            <td class="text-center">{{ banner.status|upper }}</td>
                             <td class="text-center"><a class="btn btn-primary" href="{% url 'hero_edit' banner.id %}">Edit</a></td>
                         </tr>
 

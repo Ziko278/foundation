@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+</head>
+
+<body style="">
+    
+    <div style="background-color:orange;color:white;height:300-family:cursive;">
+	<h1 class="fw-bold text-primary mb-4" style="color:orange;font-family:cursive;text-align:center;">Vincent and Anne<span class="text-white"> Foundation</span></h1>
+	<img src="https://vinannefoundation.org/media/images/gallery/mail_1_SSwLtz4.jpeg" style="width:100%;height:200px;" />
+	<h1 class="fw-bold text-primary mb-4" style="color:orange;font-family:cursive;text-align:center;">Leave a Legacy</h1>
+
+    </div>      
+  {% block 'main' %}{% endblock %}
+
+    
+      <div class="col-lg-3 col-md-6" style="background-color:grey;margin-bottom:0px">
+                    <p style="font-family:courier;color:white;padding:15px;text-align:center"><i>A gift no matter the size could make the difference</i></p>
+                   <img src="https://vinannefoundation.org/media/images/gallery/mail_2_LmF7aq5.jpeg" style="width:100%;height:100px;" />
+      </div>
+	
+	<div style="background-color:grey;color:white;font-size:14px;font-family:courier;pading:5px;text-align:center;padding:10px;margin-top:-10px">
+		<p>Whatsapp/Call</p>
+		<p><a style="color:orange" href="tel:+2349020610517">+234 (0) 902 061 0517</a></p>
+		<p>Website</p>
+		<p><a href="https://{{domain}}" style="color:orange">vinannefoundation.org</a></p>	
+	</div>                
+
+   
+</body>
+
+</html>

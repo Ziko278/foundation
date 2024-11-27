@@ -7,7 +7,7 @@
 		<h1 class="display-4 text-white animated slideInDown mb-4">About Us</h1>
 		<nav aria-label="breadcrumb animated slideInDown">
 			<ol class="breadcrumb justify-content-center mb-0">
-				<li class="breadcrumb-item"><a class="text-white" href="{% url 'about' %}">Home</a></li>
+				<li class="breadcrumb-item"><a class="text-white" href="{% url 'home' %}">Home</a></li>
 				<li class="breadcrumb-item text-primary active" aria-current="page">About Us</li>
 			</ol>
 		</nav>
@@ -21,31 +21,24 @@
 		<div class="row g-5">
 			<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
 				<div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
-					<img class="position-absolute w-100 h-100 pt-5 pe-5" src="/media/{{about_info.main_image}}" alt="" style="object-fit: cover;">
-					<img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="/media/{{about_info.other_image}}" alt="" style="width: 200px; height: 200px;">
+					<img class="position-absolute w-100 h-100 pt-5 pe-5" src="/media/{{about_info.main_image}}" alt="" style="">
+					<img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="/media/{{site_info.logo}}" alt="" style="width: 150px; height: 100px;">
 				</div>
 			</div>
 			<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
 				<div class="h-100">
-					<div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">About {{site_info.name|title}}</div>
-					<h1 class="display-6 mb-5">{{about_info.title}}</h1>
-					<div class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
-						<p class="text-dark mb-2">{{about_info.intro_description}}</p>
-						<span class="text-primary">{{about_info.founder_name}}, Founder</span>
-					</div>
-					<p class="mb-5">{{about_info.main_description}}</p>
-					<a class="btn btn-primary py-2 px-3 me-3" href="">
-						Learn More
-						<div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-							<i class="fa fa-arrow-right"></i>
-						</div>
-					</a>
-					<a class="btn btn-outline-primary py-2 px-3" href="">
-						Contact Us
-						<div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-							<i class="fa fa-arrow-right"></i>
-						</div>
-					</a>
+					<div class="d-inline-block rounded-pill bg-secondary text-center text-primary py-1 px-3">{{site_info.name|upper}}</div>
+					<p class="mb-5" style="text-align:justify">VINCENT AND ANNE FOUNDATION is a non-governmental, core philanthropic and advocacy organization. The price of the less privileged 
+							stemmed our decision to come together and organize a body that will constantly and concertedly proffer assistance to those that are
+							in dire living condition.
+							<br /><br />
+							Our focus is on protecting and providing for the helpless, the needy, the disadvantaged, and the displaced in the society. We try to 
+							revive the hope of the hopeless by giving to their needs. we also speak on their behalf, advocating help for them.
+							<br /><br />
+							With the aid of nodern technology, we see the world as a global unit that can be toured in a very short time, so we strive to have 
+							our presence felt everywhere.
+							</p>
+					
 				</div>
 			</div>
 		</div>
@@ -55,35 +48,31 @@
 {% endif %}
 
 <div class="container-xxl py-5">
+        <div class="container">
+                <div class=" mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="">
+                        <h1 class="display-6 mb-5 text-center">Our Story</h1>
+			 <p class="" style="">We saw the need for energetic, non-profit work within our local community and beyond. After learning about problems frequently faced by
+ families & individuals in the circumstance of conflicts and natural disasters, resulting to displacement and total hardship. 
+We were moved to form a non-profit organization to provide sensible solutions</p>
+                </div>
+	</div>
+</div>
+<div class="container-xxl py-5">
 	<div class="container">
 		<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-			<h1 class="display-6 mb-5">Learn More What We Do And Get Involved</h1>
+			<h1 class="display-6 mb-5">Learn More about What We Do And Get Involved</h1>
 		</div>
 		<div class="row g-4 justify-content-center">
-			<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-				<div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-					<img class="img-fluid mb-4" src="img/icon-1.png" alt="">
-					<h4 class="mb-3">Child Education</h4>
-					<p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
-					
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-				<div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-					<img class="img-fluid mb-4" src="img/icon-2.png" alt="">
-					<h4 class="mb-3">Medical Treatment</h4>
-					<p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
-					
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-				<div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-					<img class="img-fluid mb-4" src="img/icon-3.png" alt="">
-					<h4 class="mb-3">Pure Drinking Water</h4>
-					<p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
-					
-				</div>
-			</div>
+			<p>Vincent and Anne Foundation convene and collaborate as a community/organization: we bring together philanthropic professionals,
+ public spirited individuals and organization in a view to assisting humanity and also allow for philanthropic professionals play their roles. 
+We design programs that allow people we meet cultivate the habit of sharing love.
+We advocate for the less fortunate <br><br>
+
+-       We engage in a wide assortment of activities that together support our joint mission <br>
+-       We are committed to the power of fellowship and collaboration <br>
+-       we run programs, provide services and conduct direct charitable activities, like providing aid to individual and families for disaster relief and hardship assistance
+
+</p>
 		</div>
 	</div>
 </div>
@@ -97,24 +86,33 @@
 		<div class="row g-4 justify-content-center">
 			<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
 				<div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-					<img class="img-fluid mb-4" src="img/icon-1.png" alt="">
+					<i class="fa fa-bullseye" style="color:orange;font-size:72px"></i>
 					<h4 class="mb-3">Our Mission</h4>
-					<p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
+					<p class="mb-4" style="text-align:justify">We develop, promote and encourage people participation in charitable work. We build support by acting both on the problem and
+					succour in a digital way, leveraging on this internet and network age.</p>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
 				<div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-					<img class="img-fluid mb-4" src="img/icon-2.png" alt="">
+					<i class="fa fa-eye" style="color:orange;font-size:72px"></i>
 					<h4 class="mb-3">Our Vision</h4>
-					<p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
+					<p class="mb-4" style="text-align:justify">To see a society where the care and love for humanity is paramount and see help reaching the helpless in time, anywhere they are.</p>
 					
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
 				<div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-					<img class="img-fluid mb-4" src="img/icon-3.png" alt="">
-					<h4 class="mb-3">Our History</h4>
-					<p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
+					<i class="fa fa-hourglass" style="color:orange;font-size:72px"></i>
+					<h4 class="mb-3">Our Focus</h4>
+					<p class="mb-4" style="text-align:justify">We focus on the HELPLESS.</p>
+					<ul style="text-align:justify">
+						<li>We assist the displaced</li>
+						<li>We care for the sick</li>
+						<li>We give the voiceless a voice, they speak through us.</li>
+						<li>We provide the basic of life where there is much need.</li>
+
+					</ul>
+					
 					
 				</div>
 			</div>
@@ -126,72 +124,83 @@
 <!-- Team Start -->
 <div class="container-xxl py-5">
 	<div class="container">
-		<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+		<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="">
 			<div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Team Members</div>
-			<h1 class="display-6 mb-5">Let's Meet With Our Team</h1>
+			<h1 class="display-6 mb-5">Meet With Our Awesome Team Members</h1>
 		</div>
 		<div class="row g-4">
 			<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-				<div class="team-item position-relative rounded overflow-hidden">
+				<div class="team-item position-relative rounded overflo-hidden">
 					<div class="overflow-hidden">
-						<img class="img-fluid" src="{% static 'home/img/team-1.jpg' %}" alt="">
+						<img class="img-fluid" style="height:300px;width:100%"  src="{% static 'home/img/team/s1.jpg' %}" alt="">
 					</div>
-					<div class="team-text bg-light text-center p-4">
-						<h5>Full Name</h5>
-						<p class="text-primary">Designation</p>
-						<div class="team-social text-center">
-							<a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-							<a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-							<a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+					<div class="team-text bg-light text-center p-4" style="height:auto">
+						<h5>Mr Vincent Essien</h5>
+							
+
+						<div class="tea-" style="min-height:250px;height:auto;text-align:justify">
+							<p>He is a Philanthropist and the founder of VINCENT AND ANNE FOUNDATION, a philanthropic organization. He has dedicated his time 
+							and energy in assisting ther needy, the less privileged and those struct by natural or man made induced disasters. He is a husband,
+							father and also a farmer.</p>
 						</div>
+						<p class="text-primary"><a href="mailto:vine.vinannefdn@gmail.com">vine.vinannefdn@gmail.com</a></p>
+
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
 				<div class="team-item position-relative rounded overflow-hidden">
 					<div class="overflow-hidden">
-						<img class="img-fluid" src="{% static 'home/img/team-2.jpg' %}" alt="">
+						<img class="img-fluid" style="height:300px;width:100%"  src="{% static 'home/img/team/s4.jpg' %}" alt="">
 					</div>
-					<div class="team-text bg-light text-center p-4">
-						<h5>Full Name</h5>
-						<p class="text-primary">Designation</p>
-						<div class="team-social text-center">
-							<a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-							<a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-							<a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+					<div class="team-text bg-light text-center p-4" style="height:auto">
+						<h5>Hannah Omai</h5>
+						<p class="text-primary"></p>
+						<div class="tam-social text-center">
+							<p style="text-align:justify">She is so compassionate a person. she hates seeing
+			 people suffer especially children and the girl child as they are the most
+                                                        vulnerable. She have developed programs that have highlighted on girl child care amongst others. she is actively involved in
+                                                        charitable work. She is a Teacher by profession. She has a good heart.</p>
+
 						</div>
+						<p class="text-primary"><a href="mailto:anne.vinannefdn@gmail.com">anne.vinannefdn@gmail.com</a></p>
+
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
 				<div class="team-item position-relative rounded overflow-hidden">
 					<div class="overflow-hidden">
-						<img class="img-fluid" src="{% static 'home/img/team-3.jpg' %}" alt="">
+						<img class="img-fluid" style="height:300px;width:100%"  src="{% static 'home/img/team/s3.jpg' %}" alt="">
 					</div>
-					<div class="team-text bg-light text-center p-4">
-						<h5>Full Name</h5>
-						<p class="text-primary">Designation</p>
-						<div class="team-social text-center">
-							<a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-							<a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-							<a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+					<div class="team-text bg-light text-center p-4" style="height:auto">
+						<h5>Itoro Etuk</h5>
+						<p class="text-primary"></p>
+						<div class="eam-social text-center" style="">
+							<p style="text-align:justify">Ms Itoro Etuk represents the youth wing of VINCENT AND ANNE FOUNDATION
+ She has been mobilizing all and sundry to see and understand the need to be a brothers keeper. She is an active force in driving the goals and vision of this organisation. 
+She is an integral part 
+of our team</p>
 						</div>
+					<p class="text-primary"><a href="mailto:it.vinannefdn@gmail.com">it.vinannefdn@gmail.com</a></p>
+
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-				<div class="team-item position-relative rounded overflow-hidden">
+				<div class="team-item position-relative rounded overflow-hid">
 					<div class="overflow-hidden">
-						<img class="img-fluid" src="{% static 'home/img/team-4.jpg' %}" alt="">
+						<img class="img-flui" src="{% static 'home/img/team/s2.jpg' %}" style="height:300px;width:100%" alt="">
 					</div>
-					<div class="team-text bg-light text-center p-4">
-						<h5>Full Name</h5>
-						<p class="text-primary">Designation</p>
-						<div class="team-social text-center">
-							<a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-							<a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-							<a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+					<div class="team-text bg-light text-center p-4" style="height:auto">
+						<h5>Rose Okon</h5>
+						<p class="text-primary"></p>
+						<div class="team-soci text-center">
+							<p style="text-align:justify">Ms Rose Okon is a clergy and a front line person when it comes to charitable acts, she is a pivotal 
+							support to the less privileged in society</p>
 						</div>
+						<p class="text-primary"><a href="mailto:rose.vinannefdn@gmail.com">rose.vinannefdn@gmail.com</a></p>
+
 					</div>
 				</div>
 			</div>
